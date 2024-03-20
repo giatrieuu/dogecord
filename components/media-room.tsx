@@ -22,9 +22,9 @@ export const MediaRoom = ({
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    if (!user?.firstName || !user?.lastName) return;
+    if (!user?.web3Wallets?.[0]?.web3Wallet) return;
 
-    const name = `${user.firstName} ${user.lastName}`;
+    const name = `${user.web3Wallets[0].web3Wallet}`;
 
     (async () => {
       try {
@@ -35,7 +35,7 @@ export const MediaRoom = ({
         console.log(e);
       }
     })()
-  }, [user?.firstName, user?.lastName, chatId]);
+  }, [user?.web3Wallets?.[0]?.web3Wallet, chatId]);
 
   if (token === "") {
     return (

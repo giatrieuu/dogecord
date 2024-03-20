@@ -1,5 +1,10 @@
 import { SignIn } from "@clerk/nextjs";
- 
+import { SignInWithMetamaskButton } from "@clerk/nextjs";
 export default function Page() {
-  return <SignIn />;
+  return (
+    <SignInWithMetamaskButton>
+      <SignIn />
+    </SignInWithMetamaskButton>
+  )
+
 }

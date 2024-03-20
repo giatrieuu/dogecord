@@ -22,9 +22,8 @@ export const initialProfile = async () => {
   const newProfile = await db.profile.create({
     data: {
       userId: user.id,
-      name: `${user.firstName} ${user.lastName}`,
+      name: `${user.web3Wallets[0].web3Wallet}`,
       imageUrl: user.imageUrl,
-      email: user.emailAddresses[0].emailAddress
     }
   });
 
